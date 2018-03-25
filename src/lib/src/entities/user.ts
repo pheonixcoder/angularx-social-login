@@ -8,4 +8,5 @@ export class SocialUser {
   lastName: string;
   authToken: string;
   idToken: string; // Reference https://developers.google.com/identity/sign-in/web/backend-auth
+  authResponse: any;
 }

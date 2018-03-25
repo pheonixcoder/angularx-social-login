@@ -38,6 +38,7 @@ export class GoogleLoginProvider extends BaseLoginProvider {
                 user.lastName = profile.getFamilyName();
                 user.authToken = token;
                 user.idToken = backendToken;
+                user.authResponse = this.auth2.currentUser.get().getAuthResponse(true);
                 resolve(user);
               }
             }).catch((err: any) => {
@@ -66,6 +67,7 @@ export class GoogleLoginProvider extends BaseLoginProvider {
         user.lastName = profile.getFamilyName();
         user.authToken = token;
         user.idToken = backendToken;
+        user.authResponse = this.auth2.currentUser.get().getAuthResponse(true);
         resolve(user);
       }).catch((err: any) => {
         reject(err);
